@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отчёт о командировке — Halyk Bank, 11–12 июня 2025</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      background: #f5f4f0;
+      color: #1a1a18;
+      padding: 40px 20px;
+    }
+
+    .report {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 48px 52px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    /* Header */
+    .report-header {
+      border-bottom: 2px solid #e4e2da;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+    .report-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #1a1a18;
+      margin-bottom: 4px;
+    }
+    .report-desc {
+      font-size: 14px;
+      color: #6b6a63;
+      margin-bottom: 14px;
+    }
+    .report-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 13px;
+      color: #6b6a63;
+    }
+    .meta-item { display: flex; align-items: center; gap: 5px; }
+
+    /* Day label */
+    .day-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #185FA5;
+      background: #EBF3FC;
+      border: 1px solid #B5D4F4;
+      border-radius: 6px;
+      padding: 4px 14px;
+      margin-bottom: 16px;
+    }
+
+    /* Section card */
+    .section {
+      border: 1px solid #e4e2da;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 14px;
+    }
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .section-num {
+      min-width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #f0efe8;
+      border: 1px solid #d3d1c7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: #6b6a63;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .section-title { font-size: 16px; font-weight: 600; color: #1a1a18; }
+    .tags { margin-top: 5px; display: flex; flex-wrap: wrap; gap: 5px; }
+
+    /* Tags */
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 5px;
+      padding: 2px 8px;
+    }
+    .tag-go   { background: #E1F5EE; color: #0F6E56; }
+    .tag-ai   { background: #EEEDFE; color: #3C3489; }
+    .tag-infra{ background: #E6F1FB; color: #0C447C; }
+    .tag-bpm  { background: #FAEEDA; color: #633806; }
+    .tag-soft { background: #f0efe8; color: #5f5e5a; border: 1px solid #d3d1c7; }
+
+    /* Bullet list */
+    .findings { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .findings li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #2c2c2a;
+    }
+    .findings li::before {
+      content: "";
+      min-width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #b4b2a9;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+    .findings strong { color: #1a1a18; }
+    code {
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 12.5px;
+      background: #f0efe8;
+      border: 1px solid #d3d1c7;
+      border-radius: 4px;
+      padding: 1px 5px;
+      color: #3c3489;
+    }
+
+    /* Note box */
+    .note-box {
+      background: #EBF3FC;
+      border-left: 3px solid #378ADD;
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #185FA5;
+      margin-top: 12px;
+    }
+
+    /* Divider */
+    hr { border: none; border-top: 1px solid #e4e2da; margin: 28px 0; }
+
+    /* Conclusions */
+    .conclusions {
+      background: #f5f4f0;
+      border: 1px solid #d3d1c7;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 8px;
+    }
+    .conclusions-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1a1a18;
+      margin-bottom: 16px;
+    }
+    .concl-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .concl-item {
+      background: #ffffff;
+      border: 1px solid #e4e2da;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .concl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #6b6a63;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .concl-text { font-size: 13px; line-height: 1.55; color: #2c2c2a; }
+
+    .day-block { margin-bottom: 36px; }
+
+    .thanks {
+      border: 1px solid #d3c9f0;
+      background: #F5F3FE;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 16px;
+    }
+    .thanks-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #3C3489;
+      margin-bottom: 16px;
+    }
+    .thanks-person {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      background: #ffffff;
+      border: 1px solid #d3c9f0;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .thanks-person:last-child { margin-bottom: 0; }
+    .thanks-avatar {
+      min-width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #EEEDFE;
+      border: 1px solid #AFA9EC;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #3C3489;
+      flex-shrink: 0;
+    }
+    .thanks-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a18;
+      margin-bottom: 3px;
+    }
+    .thanks-text {
+      font-size: 13px;
+      line-height: 1.55;
+      color: #2c2c2a;
+    }
+      body { background: white; padding: 0; }
+      .report { box-shadow: none; padding: 32px; border-radius: 0; }
+      .concl-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .report { padding: 24px 20px; }
+      .concl-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="report">
+
+  <div class="report-header">
+    <div class="report-title">Отчёт о командировке в Halyk Bank</div>
+    <div class="report-desc">Обмен опытом в области цифровых технологий, BPM-систем и IT-архитектуры</div>
+    <div class="report-meta">
+      <div class="meta-item">&#128197; 11–12 июня 2025 г.</div>
+      <div class="meta-item">&#128205; Алматы, Казахстан</div>
+      <div class="meta-item">&#127970; Halyk Bank (Головной банк)</div>
+      <div class="meta-item">&#128101; Команды: Tenge24, BPM, DevOps, NetOps</div>
+
+
+
+
+      
+    </div>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-block">
+    <div class="day-label">&#128197; День 1 — 11 июня 2026г.</div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <div>
+          <div class="section-title">Halyk SuperApp — технологическая архитектура</div>
+          <div class="note-box"><strong>Участники от HalykBank:</strong> Олег Князев</div>
+          <div class="tags">
+            <span class="tag tag-go">Go / Golang</span>
+            <span class="tag tag-go">.NET CORE</span>
+            <span class="tag tag-ai">Claude AI</span>
+            <span class="tag tag-infra">Kafka</span>
+          </div>
+        </div>
+      </div>
+      <ul class="findings">
+        <li>Приложение не использует Istio / Envoy Gateway в качестве service mesh; применяется канареечный деплой для постепенного выкатывания обновлений.</li>
+        <li>Основной язык бэкенда — Go (Golang); коллеги подтверждают курс на Go как стратегический выбор для высоконагруженных сервисов.</li>
+        <li>Для обмена сообщениями используется Kafka; в ходе обсуждения затронуто сравнение Kafka vs RabbitMQ применительно к специфике банковских сервисов.</li>
+        <li>Аутентификация реализована на собственном Auth Service без зависимости от сторонних SSO-провайдеров по умолчанию.</li>
+        <li>Фронтенд — AngularJS; коллеги пошли путем построения webview и микрофронтендов.</li>
+        <li>В качестве использования AI инструментов они используют GitHub Copilot. Начинают работы по использованию Claude Code </li>
+        <li>В Kafka применяются идемпотентные ключи для обеспечения семантики exactly-once и предотвращения дублирования сообщений.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <div>
+          <div class="section-title">CREATIO — оценка Low-code BPM-платформы</div>
+          <div class="note-box">
+            <strong>Участники от HalykBank:</strong> Нұрсұлтан Темірбекүлы, Нурлан Терликбаев
+          </div>
+          <div class="tags">
+            <span class="tag tag-bpm">Low-code / BPM</span>
+            <span class="tag tag-soft">требует анализа</span>
+          </div>
+        </div>
+      </div>
+      <ul class="findings">
+        <li>Платформа произвела положительное первое впечатление; требует детального анализа применительно к задачам Тенге Банка.</li>
+        <li>Необходимо дополнительно оценить соответствие платформы текущим и перспективным бизнес-процессам, а также совместимость с существующим технологическим стеком.</li>
+        <li>Коллеги из Halyk Bank эксплуатируют устаревшую версию; для демонстрации актуальной версии продукта запланирована онлайн-встреча с вендором.</li>
+      </ul>
+
+            <img src="IMG_6708.heic" style="width: 500px; height: 500px;margin-left: 100px;"/>
+      <div class="note-box"><strong>Следующий шаг:</strong> организовать Zoom-демо с вендором CREATIO для оценки новой версии платформы.</div>
+    </div>
+
+
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <div>
+          <div class="section-title">Online Bank (ДБО ЮЛ) — технологическая архитектура</div>
+          <div class="note-box"><strong>Участники от HalykBank:</strong> Жалгасым Сериков, Александр Князев, Шыңғыс Хамзин</div>
+          <div class="tags">
+            <span class="tag tag-infra">Kotlin / Java Spring</span>
+            <span class="tag tag-infra">Kafka</span>
+            <span class="tag tag-infra">PostgreSQL</span>
+            <span class="tag tag-ai">Claude Code</span>
+          </div>
+        </div>
+      </div>
+      <ul class="findings">
+        <li>Технологический стек: Kotlin + Spring Framework; акцент на типобезопасность и лаконичность кода.</li>
+        <li>СУБД: Oracle; активно прорабатывается стратегия миграции на PostgreSQL, в том числе с применением Yandex SPQR — прокси-слоя для горизонтального масштабирования PostgreSQL.</li>
+        <li>Для AI-ассистирования разработчиков используются GitHub Copilot и Cursor; рассматривается приобретение пилотной лицензии Claude Code — что подтверждает актуальность нашей собственной потребности в данном инструменте.</li>
+      </ul>
+
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <div>
+          <div class="section-title">Halyk Fin Service — архитектура платёжного сервиса</div>
+          <div class="note-box">
+            <strong>Участники от HalykBank:</strong> Иван Толмачев
+          </div>
+          <div class="tags">
+            <span class="tag tag-infra">Golang / Java</span>
+            <span class="tag tag-infra">PostgreSQL</span>
+            <span class="tag tag-bpm">E-com / Payments</span>
+          </div>
+        </div>
+      </div>
+      <ul class="findings">
+        <li>Halyk Fin Service — дочерняя компания внутри Halyk Group, специализирующаяся на обработке e-commerce транзакций и платёжных операций; фактически является платёжным шлюзом группы для онлайн-коммерции.</li>
+        <li>Компания работает с высоконагруженными платёжными потоками, что предъявляет повышенные требования к надёжности, идемпотентности операций и скорости обработки транзакций.</li>
+        <li>Технологический стек ориентирован на Go и Java; для хранения данных применяется PostgreSQL — согласуется с нашим собственным вектором развития.</li>
+        <li>Опыт команды в части обеспечения согласованности данных при платёжных операциях, обработки ошибок и организации retry-логики оказался практически применим для наших задач в рамках ДБО ЮЛ и QR-платежей.</li>
+        <li>Взаимодействие подтвердило перспективность более тесной технической кооперации с Halyk Fin Service в части стандартизации платёжных интеграций внутри группы.</li>
+      </ul>
+
+      <img src="IMG_6710.heic" style="width: 500px; height: 500px;margin-left: 100px;"/>
+    </div>
+
+
+  </div>
+
+  <hr>
+
+  <!-- DAY 2 -->
+  <div class="day-block">
+    <div class="day-label">&#128197; День 2 — 12 июня 2026г.</div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <div>
+          <div class="section-title">ДАБП — практика применения Camunda BPM</div>
+          <div class="note-box"><strong>Участники от HalykBank:</strong> Саят Шыңғыс, Алмас Амрин</div>
+          <div class="tags">
+            <span class="tag tag-bpm">Camunda</span>
+            <span class="tag tag-bpm">External Tasks</span>
+          </div>
+        </div>
+      </div>
+      <ul class="findings">
+        <li>Команда ДАБП активно применяет HTTP Connectors и паттерн External Tasks для интеграции внешних систем с Camunda — опыт непосредственно применим к нашему проекту BPM MVP2.</li>
+        <li>Параметр Lock Duration для External Tasks настраивается индивидуально под каждый тип задачи; коллеги поделились рекомендациями по оптимальным значениям.</li>
+        <li>Коллеги дали рекомендации по referenceId — это обеспечивает трассируемость и корректную корреляцию сообщений.</li>
+        <li>Получен ряд ценных практических рекомендаций по архитектуре Camunda-процессов, которые будут задокументированы и переданы команде BPM.</li>
+        <li>Рассматривают переход на Camunda 8 версию. Она дорогая по лицензии, также нужно будет переписывать текущие бпм процессы на Camunda 8. Это долго и дорого, ищут альтернативы</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <div>
+          <div class="section-title">Ситуационный центр — организация мониторинга и базы знаний</div>
+          <div class="note-box">
+            <strong>Участники от HalykBank:</strong> Александр Жолковский,  Азимхан Калтаев
+          </div>
+          <div class="tags">
+            <span class="tag tag-infra">Observability</span>
+            <span class="tag tag-infra">Confluence</span>
+          </div>
+        </div>
+      </div>
+      <ul class="findings">
+        <li>Продемонстрированы работающие системы мониторинга: дашборды, алертинг, визуализация состояния инфраструктуры в режиме реального времени.</li>
+        <li>Ознакомились с организацией базы знаний в Confluence: структура правил, runbook'и, регламенты реагирования на инциденты — полезный образец для развития нашей документации.</li>
+        <li>IT-архитектор банка поделился практическими инсайтами по построению культуры наблюдаемости (observability) в крупной финансовой организации.</li>
+      </ul>
+
+      <img src="IMG_6732.heic" style="width: 500px; height: 500px;margin-left: 100px;"/>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <div>
+          <div class="section-title">ДИТИ — инфраструктура и архитектура Halyk Bank</div>
+           <div class="note-box">
+            <strong>Участники от HalykBank:</strong> Станислав Ким, Олег Ивакин 
+          </div>
+          <div class="tags">
+            <span class="tag tag-infra">Metro Cluster</span>
+            <span class="tag tag-infra">Reliability</span>
+          </div>
+        </div>
+      </div>
+      <ul class="findings">
+        <li>Департамент планирует реализацию metro-кластера для обеспечения геораспределённой отказоустойчивости с нулевой потерей данных (RPO = 0).</li>
+        <li>Коллеги открыто поделились опытом реальных сбоев: причины, последствия и системные меры по их предотвращению — крайне ценный практический материал.</li>
+        <li>Получено глубокое понимание общей IT-архитектуры Halyk Bank: применяемые технологии, принципы построения инфраструктуры, подход к масштабированию.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <div>
+          <div class="section-title">Встреча с управляющими директорами Halyk Bank</div>
+          <div class="note-box">
+            <strong>Участники от HalykBank:</strong> Руслан Серазитдинов, Рустем Муратбеков, Нурлан Терликбаев 
+          </div>
+          <div class="tags">
+            <span class="tag tag-soft">Нетворкинг</span>
+            <span class="tag tag-soft">Стратегия</span>
+          </div>
+        </div>
+      </div>
+      <ul class="findings">
+        <li>Проведён обзорный брифинг по ключевым направлениям деятельности: технологическая стратегия, продуктовое развитие, операционная устойчивость.</li>
+        <li>Установлены прямые деловые контакты с руководством Halyk Bank — основа для оперативного взаимодействия в рамках группы.</li>
+      </ul>
+
+      <img src="IMG_6754.heic" style="width: 400px; height: 500px;margin-left: 100px;"/>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">5</div>
+        <div>
+          <div class="section-title">Отказоустойчивость Halyk Bank — управление инцидентами</div>
+          <div class="tags">
+            <span class="tag tag-infra">Incident Mgmt</span>
+            <span class="tag tag-infra">SLA</span>
+          </div>
+        </div>
+      </div>
+      <ul class="findings">
+        <li>Проведены разборы реальных производственных инцидентов (post-mortem): методология анализа первопричин (RCA) и системные выводы.</li>
+        <li>Рассмотрены метрики времени простоя (downtime), целевые показатели доступности и способы их измерения в промышленных условиях.</li>
+        <li>Изучены масштабы последствий крупных сбоев — как операционных, так и клиентских — и подходы к минимизации ущерба.</li>
+        <li>Ознакомились с системными мерами превентивного характера.</li>
+        <li>Стандарты и сроки устранения инцидентов (SLA по восстановлению) — используются как ориентир для формирования собственных регламентов.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">6</div>
+        <div>
+          <div class="section-title">AI в Halyk SuperApp — прикладные сценарии</div>
+          <div class="note-box">
+            <strong>Участники от HalykBank:</strong> Олег Князев и команда Halyk SuperApp
+          </div>
+          <div class="tags">
+            <span class="tag tag-ai">Claude AI Agent</span>
+            <span class="tag tag-ai">AI-assisted Dev</span>
+          </div>
+        </div>
+      </div>
+      <ul class="findings">
+        <li>Claude AI развёрнут в роли AI-агента бизнес-аналитика: автоматизирует сбор и формализацию требований, снижает нагрузку на аналитиков при первичной обработке запросов.</li>
+        <li>Интеграция AI в процессы разработки (Copilot, Cursor, Claude Code) рассматривается как инструмент повышения скорости и качества, а не замены специалистов.</li>
+        <li>Опыт Halyk SuperApp подтверждает технологическую зрелость AI-инструментов для применения в банковской среде.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="conclusions">
+    <div class="conclusions-title">&#9989; Ключевые выводы и рекомендации</div>
+    <div class="concl-grid">
+      <div class="concl-item">
+        <div class="concl-label">Подтверждённые решения</div>
+        <div class="concl-text">Технологический стек ДРЦС (Go, Kafka, Keycloak) соответствует лучшим практикам группы. </div>
+      </div>
+      <div class="concl-item">
+        <div class="concl-label">К внедрению</div>
+         <div class="concl-text">
+          <ul class="findings">
+            <li>Применить практики Ситуационного центра для развития мониторинга.</li>
+            <li>Zoom комнаты для разбора аварий составить ТЗ.</li>
+            <li>Ускорить приобретение Claude Code.</li>
+        </ul>
+        </div>
+
+      </div>
+      <div class="concl-item">
+        <div class="concl-label">Следующие шаги</div>
+        <div class="concl-text">Организовать Zoom-демо CREATIO с вендором. </div>
+      </div>
+      <div class="concl-item">
+        <div class="concl-label">Установленные контакты</div>
+        <div class="concl-text">Прямые контакты с командами ДАБП, ДИТИ, Ситуационного центра и управляющими директорами Halyk Bank для оперативного взаимодействия.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+
+
+</div>
+</body>
+</html>
